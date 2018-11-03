@@ -1,8 +1,13 @@
 package models
 
-import "time"
+import (
+	"database/sql"
+	"time"
+)
 
-type Database struct{}
+type Database struct {
+	*sql.DB
+}
 
 func (db *Database) GetSnippet(id int) (*Snippet, error) {
 	if id == 123 {
